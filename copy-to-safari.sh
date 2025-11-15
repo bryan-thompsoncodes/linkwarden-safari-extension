@@ -3,11 +3,10 @@
 # Script to copy built extension files to Safari Xcode project
 # Run this from the repository root after building: cd linkwarden-official && npm run build && cd .. && ./copy-to-safari.sh
 
-# Get the directory where this script is located (repository root)
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 OFFICIAL_DIR="$SCRIPT_DIR/linkwarden-official"
 SAFARI_PROJECT_DIR="$SCRIPT_DIR/Linkwarden for Safari/dist"
+PATCHES_DIR="$SCRIPT_DIR/safari-patches"
 
 # Check if linkwarden-official exists
 if [ ! -d "$OFFICIAL_DIR" ]; then
@@ -52,32 +51,64 @@ cp -r "$OFFICIAL_DIR/dist/src" "$SAFARI_PROJECT_DIR/"
 # Copy icons
 cp "$OFFICIAL_DIR/dist"/*.png "$SAFARI_PROJECT_DIR/" 2>/dev/null || true
 
+# Fix background.js for Safari - wrap omnibox and bookmarks API calls
+BACKGROUND_JS="$SAFARI_PROJECT_DIR/background.js"
+if [ -f "$BACKGROUND_JS" ]; then
+    echo "  ✓ Fixing background.js for Safari compatibility..."
+    node -e "
+        const fs = require('fs');
+        const bg = fs.readFileSync('$BACKGROUND_JS', 'utf8');
+        let fixed = bg;
+
+        // Fix omnibox API calls
+        if (bg.includes('t.omnibox') && !bg.includes('if(t.omnibox)')) {
+            const startIdx = bg.indexOf('t.omnibox.onInputStarted');
+            if (startIdx !== -1) {
+                let endIdx = bg.length;
+                for (let i = bg.length - 1; i >= startIdx; i--) {
+                    if (bg.substring(i, i + 3) === '});') {
+                        endIdx = i + 3;
+                        break;
+                    }
+                }
+                const before = bg.substring(0, startIdx);
+                const omnibox = bg.substring(startIdx, endIdx);
+                const after = bg.substring(endIdx);
+                fixed = before + 'if(t.omnibox){' + omnibox + '}' + after;
+                console.log('    Wrapped omnibox API calls in Safari guard');
+            }
+        }
+
+        // Fix bookmarks API calls
+        if (fixed.includes('t.bookmarks.create') && !fixed.includes('t.bookmarks&&')) {
+            fixed = fixed.replace(/if\(s\)t\.bookmarks\.create/g, 'if(s&&t.bookmarks)t.bookmarks.create');
+            console.log('    Wrapped bookmarks API calls in Safari guard');
+        }
+
+        if (fixed !== bg) {
+            fs.writeFileSync('$BACKGROUND_JS', fixed, 'utf8');
+        } else {
+            console.log('    Background.js already has all Safari guards');
+        }
+    "
+fi
+
 # Inject Safari-specific notice script into options page
-PATCHES_DIR="$SCRIPT_DIR/safari-patches"
 if [ -f "$PATCHES_DIR/safari-options-notice.js" ]; then
-  echo "  ✓ Injecting Safari options notice..."
-  OPTIONS_HTML="$SAFARI_PROJECT_DIR/src/pages/Options/options.html"
-  if [ -f "$OPTIONS_HTML" ]; then
-    # Copy the notice script to assets
-    cp "$PATCHES_DIR/safari-options-notice.js" "$SAFARI_PROJECT_DIR/assets/safari-options-notice.js"
-    # Inject script tag before closing body tag (with defer to not interfere with React)
-    if ! grep -q "safari-options-notice.js" "$OPTIONS_HTML"; then
-      # Use a temporary file for safer editing
-      TEMP_FILE=$(mktemp)
-      # Insert script tag before </body> with defer attribute
-      if [[ "$OSTYPE" == "darwin"* ]]; then
-        # macOS sed - insert before </body>
-        sed '/<\/body>/i\
+    echo "  ✓ Injecting Safari options notice..."
+    OPTIONS_HTML="$SAFARI_PROJECT_DIR/src/pages/Options/options.html"
+    if [ -f "$OPTIONS_HTML" ] && ! grep -q "safari-options-notice.js" "$OPTIONS_HTML"; then
+        cp "$PATCHES_DIR/safari-options-notice.js" "$SAFARI_PROJECT_DIR/assets/safari-options-notice.js"
+        TEMP_FILE=$(mktemp)
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+            sed '/<\/body>/i\
   <script defer src="/assets/safari-options-notice.js"></script>
 ' "$OPTIONS_HTML" > "$TEMP_FILE"
-      else
-        # Linux sed
-        sed '/<\/body>/i\  <script defer src="/assets/safari-options-notice.js"></script>' "$OPTIONS_HTML" > "$TEMP_FILE"
-      fi
-      mv "$TEMP_FILE" "$OPTIONS_HTML"
+        else
+            sed '/<\/body>/i\  <script defer src="/assets/safari-options-notice.js"></script>' "$OPTIONS_HTML" > "$TEMP_FILE"
+        fi
+        mv "$TEMP_FILE" "$OPTIONS_HTML"
     fi
-  fi
 fi
 
 echo "✅ Files copied to Safari project successfully!"
-
