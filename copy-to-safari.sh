@@ -52,5 +52,32 @@ cp -r "$OFFICIAL_DIR/dist/src" "$SAFARI_PROJECT_DIR/"
 # Copy icons
 cp "$OFFICIAL_DIR/dist"/*.png "$SAFARI_PROJECT_DIR/" 2>/dev/null || true
 
+# Inject Safari-specific notice script into options page
+PATCHES_DIR="$SCRIPT_DIR/safari-patches"
+if [ -f "$PATCHES_DIR/safari-options-notice.js" ]; then
+  echo "  ✓ Injecting Safari options notice..."
+  OPTIONS_HTML="$SAFARI_PROJECT_DIR/src/pages/Options/options.html"
+  if [ -f "$OPTIONS_HTML" ]; then
+    # Copy the notice script to assets
+    cp "$PATCHES_DIR/safari-options-notice.js" "$SAFARI_PROJECT_DIR/assets/safari-options-notice.js"
+    # Inject script tag before closing body tag (with defer to not interfere with React)
+    if ! grep -q "safari-options-notice.js" "$OPTIONS_HTML"; then
+      # Use a temporary file for safer editing
+      TEMP_FILE=$(mktemp)
+      # Insert script tag before </body> with defer attribute
+      if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS sed - insert before </body>
+        sed '/<\/body>/i\
+  <script defer src="/assets/safari-options-notice.js"></script>
+' "$OPTIONS_HTML" > "$TEMP_FILE"
+      else
+        # Linux sed
+        sed '/<\/body>/i\  <script defer src="/assets/safari-options-notice.js"></script>' "$OPTIONS_HTML" > "$TEMP_FILE"
+      fi
+      mv "$TEMP_FILE" "$OPTIONS_HTML"
+    fi
+  fi
+fi
+
 echo "✅ Files copied to Safari project successfully!"
 
