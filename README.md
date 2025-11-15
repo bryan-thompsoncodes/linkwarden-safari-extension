@@ -203,26 +203,6 @@ Contributions are welcome! Please:
 3. Run `./copy-to-safari.sh` to copy files
 4. Check bundle identifiers match between app and extension targets
 
-### Git Issues
-
-**`linkwarden-official/` appears in git status:**
-```bash
-git rm -r --cached linkwarden-official/
-git commit -m "Remove linkwarden-official from tracking"
-```
-
-**Xcode user data files appearing:**
-```bash
-git rm -r --cached "Linkwarden for Safari/"*.xcuserdata/
-git commit -m "Remove Xcode user data files"
-```
-
-### CORS Errors
-
-- Ensure your Linkwarden instance allows requests from browser extensions
-- The extension uses `fetch` API which should bypass CORS
-- Check server configuration if issues persist
-
 See [Linkwarden for Safari/README.md](./Linkwarden%20for%20Safari/README.md) for more detailed troubleshooting.
 
 ## 📝 License
