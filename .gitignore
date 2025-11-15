@@ -1,0 +1,49 @@
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/*.xcscheme
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+*.xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
+*.xcscmblueprint
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+DerivedData/
+*.swp
+*~.nib
+
+# Build artifacts
+Linkwarden for Safari/dist/
+linkwarden-official/dist/
+linkwarden-official/node_modules/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Official extension source (tracked separately)
+# Option 1: Ignore completely (users clone separately)
+linkwarden-official/
+
+# Option 2: Use git submodule (uncomment if using submodules)
+# linkwarden-official/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.log
+*.tmp
+

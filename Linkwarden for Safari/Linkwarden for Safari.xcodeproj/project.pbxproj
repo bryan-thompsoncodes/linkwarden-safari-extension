@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93B0FD662EC8E99E00C4B6E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0FD652EC8E99E00C4B6E5 /* AppDelegate.swift */; };
+		93B0FD6A2EC8E99E00C4B6E5 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD682EC8E99E00C4B6E5 /* Main.html */; };
+		93B0FD6C2EC8E99E00C4B6E5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD6B2EC8E99E00C4B6E5 /* Icon.png */; };
+		93B0FD6E2EC8E99E00C4B6E5 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD6D2EC8E99E00C4B6E5 /* Style.css */; };
+		93B0FD702EC8E99E00C4B6E5 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD6F2EC8E99E00C4B6E5 /* Script.js */; };
+		93B0FD722EC8E99E00C4B6E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0FD712EC8E99E00C4B6E5 /* ViewController.swift */; };
+		93B0FD752EC8E99E00C4B6E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD732EC8E99E00C4B6E5 /* Main.storyboard */; };
+		93B0FD772EC8E99F00C4B6E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD762EC8E99F00C4B6E5 /* Assets.xcassets */; };
+		93B0FD7E2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 93B0FD7D2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93B0FD832EC8E99F00C4B6E5 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0FD822EC8E99F00C4B6E5 /* SafariWebExtensionHandler.swift */; };
+		93B0FD9A2EC8E9A000C4B6E5 /* 48.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD8F2EC8E9A000C4B6E5 /* 48.png */; };
+		93B0FD9B2EC8E9A000C4B6E5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD902EC8E9A000C4B6E5 /* index.html */; };
+		93B0FD9C2EC8E9A000C4B6E5 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD912EC8E9A000C4B6E5 /* background.js */; };
+		93B0FD9D2EC8E9A000C4B6E5 /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD922EC8E9A000C4B6E5 /* 128.png */; };
+		93B0FD9E2EC8E9A000C4B6E5 /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD932EC8E9A000C4B6E5 /* options.js */; };
+		93B0FD9F2EC8E9A000C4B6E5 /* 16.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD942EC8E9A000C4B6E5 /* 16.png */; };
+		93B0FDA02EC8E9A000C4B6E5 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD952EC8E9A000C4B6E5 /* main.js */; };
+		93B0FDA12EC8E9A000C4B6E5 /* 32.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD962EC8E9A000C4B6E5 /* 32.png */; };
+		93B0FDA22EC8E9A000C4B6E5 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD972EC8E9A000C4B6E5 /* manifest.json */; };
+		93B0FDA32EC8E9A000C4B6E5 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD982EC8E9A000C4B6E5 /* assets */; };
+		93B0FDA42EC8E9A000C4B6E5 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 93B0FD992EC8E9A000C4B6E5 /* src */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93B0FD7F2EC8E99F00C4B6E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B0FD5A2EC8E99E00C4B6E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93B0FD7C2EC8E99F00C4B6E5;
+			remoteInfo = "Linkwarden for Safari Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		93B0FD8A2EC8E99F00C4B6E5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				93B0FD7E2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		93B0FD622EC8E99E00C4B6E5 /* Linkwarden for Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Linkwarden for Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B0FD652EC8E99E00C4B6E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		93B0FD692EC8E99E00C4B6E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		93B0FD6B2EC8E99E00C4B6E5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		93B0FD6D2EC8E99E00C4B6E5 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		93B0FD6F2EC8E99E00C4B6E5 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		93B0FD712EC8E99E00C4B6E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93B0FD742EC8E99E00C4B6E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93B0FD762EC8E99F00C4B6E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93B0FD782EC8E99F00C4B6E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93B0FD7D2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Linkwarden for Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B0FD822EC8E99F00C4B6E5 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		93B0FD842EC8E99F00C4B6E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93B0FD8F2EC8E9A000C4B6E5 /* 48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 48.png; path = 48.png; sourceTree = "<group>"; };
+		93B0FD902EC8E9A000C4B6E5 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = index.html; sourceTree = "<group>"; };
+		93B0FD912EC8E9A000C4B6E5 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = background.js; sourceTree = "<group>"; };
+		93B0FD922EC8E9A000C4B6E5 /* 128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 128.png; path = 128.png; sourceTree = "<group>"; };
+		93B0FD932EC8E9A000C4B6E5 /* options.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = options.js; path = options.js; sourceTree = "<group>"; };
+		93B0FD942EC8E9A000C4B6E5 /* 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 16.png; path = 16.png; sourceTree = "<group>"; };
+		93B0FD952EC8E9A000C4B6E5 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = main.js; path = main.js; sourceTree = "<group>"; };
+		93B0FD962EC8E9A000C4B6E5 /* 32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32.png; path = 32.png; sourceTree = "<group>"; };
+		93B0FD972EC8E9A000C4B6E5 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = manifest.json; sourceTree = "<group>"; };
+		93B0FD982EC8E9A000C4B6E5 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = assets; sourceTree = "<group>"; };
+		93B0FD992EC8E9A000C4B6E5 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = src; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93B0FD5F2EC8E99E00C4B6E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93B0FD7A2EC8E99F00C4B6E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93B0FD592EC8E99E00C4B6E5 = {
+			isa = PBXGroup;
+			children = (
+				93B0FD642EC8E99E00C4B6E5 /* Linkwarden for Safari */,
+				93B0FD812EC8E99F00C4B6E5 /* Linkwarden for Safari Extension */,
+				93B0FD632EC8E99E00C4B6E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93B0FD632EC8E99E00C4B6E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93B0FD622EC8E99E00C4B6E5 /* Linkwarden for Safari.app */,
+				93B0FD7D2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93B0FD642EC8E99E00C4B6E5 /* Linkwarden for Safari */ = {
+			isa = PBXGroup;
+			children = (
+				93B0FD652EC8E99E00C4B6E5 /* AppDelegate.swift */,
+				93B0FD712EC8E99E00C4B6E5 /* ViewController.swift */,
+				93B0FD732EC8E99E00C4B6E5 /* Main.storyboard */,
+				93B0FD762EC8E99F00C4B6E5 /* Assets.xcassets */,
+				93B0FD782EC8E99F00C4B6E5 /* Info.plist */,
+				93B0FD672EC8E99E00C4B6E5 /* Resources */,
+			);
+			path = "Linkwarden for Safari";
+			sourceTree = "<group>";
+		};
+		93B0FD672EC8E99E00C4B6E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				93B0FD682EC8E99E00C4B6E5 /* Main.html */,
+				93B0FD6B2EC8E99E00C4B6E5 /* Icon.png */,
+				93B0FD6D2EC8E99E00C4B6E5 /* Style.css */,
+				93B0FD6F2EC8E99E00C4B6E5 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		93B0FD812EC8E99F00C4B6E5 /* Linkwarden for Safari Extension */ = {
+			isa = PBXGroup;
+			children = (
+				93B0FD8E2EC8E9A000C4B6E5 /* Resources */,
+				93B0FD822EC8E99F00C4B6E5 /* SafariWebExtensionHandler.swift */,
+				93B0FD842EC8E99F00C4B6E5 /* Info.plist */,
+			);
+			path = "Linkwarden for Safari Extension";
+			sourceTree = "<group>";
+		};
+		93B0FD8E2EC8E9A000C4B6E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				93B0FD8F2EC8E9A000C4B6E5 /* 48.png */,
+				93B0FD902EC8E9A000C4B6E5 /* index.html */,
+				93B0FD912EC8E9A000C4B6E5 /* background.js */,
+				93B0FD922EC8E9A000C4B6E5 /* 128.png */,
+				93B0FD932EC8E9A000C4B6E5 /* options.js */,
+				93B0FD942EC8E9A000C4B6E5 /* 16.png */,
+				93B0FD952EC8E9A000C4B6E5 /* main.js */,
+				93B0FD962EC8E9A000C4B6E5 /* 32.png */,
+				93B0FD972EC8E9A000C4B6E5 /* manifest.json */,
+				93B0FD982EC8E9A000C4B6E5 /* assets */,
+				93B0FD992EC8E9A000C4B6E5 /* src */,
+			);
+			name = Resources;
+			path = dist;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93B0FD612EC8E99E00C4B6E5 /* Linkwarden for Safari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93B0FD8B2EC8E99F00C4B6E5 /* Build configuration list for PBXNativeTarget "Linkwarden for Safari" */;
+			buildPhases = (
+				93B0FD5E2EC8E99E00C4B6E5 /* Sources */,
+				93B0FD5F2EC8E99E00C4B6E5 /* Frameworks */,
+				93B0FD602EC8E99E00C4B6E5 /* Resources */,
+				93B0FD8A2EC8E99F00C4B6E5 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93B0FD802EC8E99F00C4B6E5 /* PBXTargetDependency */,
+			);
+			name = "Linkwarden for Safari";
+			packageProductDependencies = (
+			);
+			productName = "Linkwarden for Safari";
+			productReference = 93B0FD622EC8E99E00C4B6E5 /* Linkwarden for Safari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93B0FD7C2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93B0FD872EC8E99F00C4B6E5 /* Build configuration list for PBXNativeTarget "Linkwarden for Safari Extension" */;
+			buildPhases = (
+				93B0FD792EC8E99F00C4B6E5 /* Sources */,
+				93B0FD7A2EC8E99F00C4B6E5 /* Frameworks */,
+				93B0FD7B2EC8E99F00C4B6E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Linkwarden for Safari Extension";
+			packageProductDependencies = (
+			);
+			productName = "Linkwarden for Safari Extension";
+			productReference = 93B0FD7D2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93B0FD5A2EC8E99E00C4B6E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					93B0FD612EC8E99E00C4B6E5 = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+					93B0FD7C2EC8E99F00C4B6E5 = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 93B0FD5D2EC8E99E00C4B6E5 /* Build configuration list for PBXProject "Linkwarden for Safari" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93B0FD592EC8E99E00C4B6E5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 93B0FD632EC8E99E00C4B6E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93B0FD612EC8E99E00C4B6E5 /* Linkwarden for Safari */,
+				93B0FD7C2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93B0FD602EC8E99E00C4B6E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93B0FD6C2EC8E99E00C4B6E5 /* Icon.png in Resources */,
+				93B0FD752EC8E99E00C4B6E5 /* Main.storyboard in Resources */,
+				93B0FD702EC8E99E00C4B6E5 /* Script.js in Resources */,
+				93B0FD6A2EC8E99E00C4B6E5 /* Main.html in Resources */,
+				93B0FD772EC8E99F00C4B6E5 /* Assets.xcassets in Resources */,
+				93B0FD6E2EC8E99E00C4B6E5 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93B0FD7B2EC8E99F00C4B6E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93B0FD9A2EC8E9A000C4B6E5 /* 48.png in Resources */,
+				93B0FD9D2EC8E9A000C4B6E5 /* 128.png in Resources */,
+				93B0FD9F2EC8E9A000C4B6E5 /* 16.png in Resources */,
+				93B0FD9C2EC8E9A000C4B6E5 /* background.js in Resources */,
+				93B0FDA22EC8E9A000C4B6E5 /* manifest.json in Resources */,
+				93B0FDA32EC8E9A000C4B6E5 /* assets in Resources */,
+				93B0FDA02EC8E9A000C4B6E5 /* main.js in Resources */,
+				93B0FDA42EC8E9A000C4B6E5 /* src in Resources */,
+				93B0FD9B2EC8E9A000C4B6E5 /* index.html in Resources */,
+				93B0FDA12EC8E9A000C4B6E5 /* 32.png in Resources */,
+				93B0FD9E2EC8E9A000C4B6E5 /* options.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93B0FD5E2EC8E99E00C4B6E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93B0FD722EC8E99E00C4B6E5 /* ViewController.swift in Sources */,
+				93B0FD662EC8E99E00C4B6E5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93B0FD792EC8E99F00C4B6E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93B0FD832EC8E99F00C4B6E5 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93B0FD802EC8E99F00C4B6E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93B0FD7C2EC8E99F00C4B6E5 /* Linkwarden for Safari Extension */;
+			targetProxy = 93B0FD7F2EC8E99F00C4B6E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		93B0FD682EC8E99E00C4B6E5 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93B0FD692EC8E99E00C4B6E5 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		93B0FD732EC8E99E00C4B6E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93B0FD742EC8E99E00C4B6E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93B0FD852EC8E99F00C4B6E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		93B0FD862EC8E99F00C4B6E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		93B0FD882EC8E99F00C4B6E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74WJ2F6JY2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Linkwarden for Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Linkwarden for Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snowboardtechie.linkwarden-for-safari.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		93B0FD892EC8E99F00C4B6E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74WJ2F6JY2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Linkwarden for Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Linkwarden for Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snowboardtechie.linkwarden-for-safari.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		93B0FD8C2EC8E99F00C4B6E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74WJ2F6JY2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Linkwarden for Safari/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Linkwarden for Safari";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snowboardtechie.linkwarden-for-safari";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		93B0FD8D2EC8E99F00C4B6E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74WJ2F6JY2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Linkwarden for Safari/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Linkwarden for Safari";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snowboardtechie.linkwarden-for-safari";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93B0FD5D2EC8E99E00C4B6E5 /* Build configuration list for PBXProject "Linkwarden for Safari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93B0FD852EC8E99F00C4B6E5 /* Debug */,
+				93B0FD862EC8E99F00C4B6E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93B0FD872EC8E99F00C4B6E5 /* Build configuration list for PBXNativeTarget "Linkwarden for Safari Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93B0FD882EC8E99F00C4B6E5 /* Debug */,
+				93B0FD892EC8E99F00C4B6E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93B0FD8B2EC8E99F00C4B6E5 /* Build configuration list for PBXNativeTarget "Linkwarden for Safari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93B0FD8C2EC8E99F00C4B6E5 /* Debug */,
+				93B0FD8D2EC8E99F00C4B6E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93B0FD5A2EC8E99E00C4B6E5 /* Project object */;
+}
