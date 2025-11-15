@@ -1,0 +1,36 @@
+diff --git a/src/pages/Background/index.ts b/src/pages/Background/index.ts
+index 0000000..1111111 100644
+--- a/src/pages/Background/index.ts
++++ b/src/pages/Background/index.ts
+@@ -235,12 +235,14 @@ browser.commands.onCommand.addListener(async (command) => {
+       break;
+     }
+     default:
+       // Handle cases where sync is enabled or not
+       if (syncBookmarks) {
+-        browser.bookmarks.create({
++        if (browser.bookmarks) {
++          browser.bookmarks.create({
+           parentId: '1',
+           title: tab.title,
+           url: tab.url,
+         });
++        }
+       } else {
+         const config = await getConfig();
+@@ -325,3 +325,5 @@ browser.tabs.onActivated.addListener(async ({ tabId }) => {
+ });
+ 
+ // Omnibox implementation
++// Safari doesn't support omnibox API, so we guard these calls
++if (browser.omnibox) {
+ 
+ browser.omnibox.onInputStarted.addListener(async () => {
+@@ -398,5 +400,7 @@ browser.omnibox.onInputEntered.addListener(
+         await browser.tabs.create({ url, active: false });
+         break;
+     }
+   }
+ );
++
++} // End of omnibox guard

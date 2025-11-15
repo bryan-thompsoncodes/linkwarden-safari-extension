@@ -1,0 +1,51 @@
+diff --git a/src/@/lib/cache.ts b/src/@/lib/cache.ts
+index 74e4642..71e5cdf 100644
+--- a/src/@/lib/cache.ts
++++ b/src/@/lib/cache.ts
+@@ -91,9 +91,16 @@ export async function saveLinksInCache(baseUrl: string) {
+         link = { ...bookmarksMetadata[existingLinkIndex], ...link };
+         bookmarksMetadata[existingLinkIndex] = link;
+       } else {
+-        // Add new bookmark from the server
+-        const newLocalBookmark = await createBookmarkInBrowser(link);
+-        link.bookmarkId = newLocalBookmark.id;
++        // Add new bookmark from the server (only if bookmarks API is available)
++        if (browser.bookmarks) {
++          try {
++            const newLocalBookmark = await createBookmarkInBrowser(link);
++            link.bookmarkId = newLocalBookmark.id;
++          } catch (error) {
++            // Bookmarks API not available (e.g., Safari), continue without bookmark sync
++            console.log('Bookmarks API not available, skipping bookmark creation');
++          }
++        }
+         bookmarksMetadata.push(link);
+       }
+     }
+@@ -104,7 +111,7 @@ export async function saveLinksInCache(baseUrl: string) {
+       const indexToRemove = bookmarksMetadata.indexOf(bookmarkToRemove);
+       if (indexToRemove !== -1) {
+         bookmarksMetadata.splice(indexToRemove, 1);
+-        if (bookmarkToRemove.bookmarkId != null) {
++        if (bookmarkToRemove.bookmarkId != null && browser.bookmarks) {
+           await browser.bookmarks.remove(bookmarkToRemove.bookmarkId);
+         }
+       }
+@@ -119,11 +126,17 @@ export async function saveLinksInCache(baseUrl: string) {
+ }
+ 
+ export async function createBookmarkInBrowser(bookmark: bookmarkMetadata): Promise<BookmarkTreeNode> {
++  if (!browser.bookmarks) {
++    throw new Error('Bookmarks API not available');
++  }
+   const { url, name } = bookmark;
+   return await browser.bookmarks.create({ url, title: name });
+ }
+ 
+ const getCurrentBookmarks = async () => {
++  if (!browser.bookmarks) {
++    return [];
++  }
+   return await browser.bookmarks.getTree();
+ };
+ 

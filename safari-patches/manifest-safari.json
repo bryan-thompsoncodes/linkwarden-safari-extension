@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Linkwarden",
+  "description": "The browser extension for Linkwarden.",
+  "homepage_url": "https://linkwarden.app/",
+  "version": "1.3.3",
+  "action": {
+    "default_popup": "./index.html",
+    "default_icon": {
+      "16": "16.png",
+      "32": "32.png",
+      "48": "48.png",
+      "128": "128.png"
+    },
+    "default_title": "Linkwarden"
+  },
+  "options_ui": {
+    "page": "./src/pages/Options/options.html"
+  },
+  "icons": {
+    "16": "16.png",
+    "32": "32.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs",
+    "commands",
+    "contextMenus"
+  ],
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "host_permissions": ["*://*/*"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+Y"
+      }
+    }
+  }
+}
+

@@ -25,10 +25,10 @@ if [ ! -d "$OFFICIAL_DIR/dist" ]; then
     exit 1
 fi
 
-# Check if Safari project directory exists
+# Create Safari project directory if it doesn't exist
 if [ ! -d "$SAFARI_PROJECT_DIR" ]; then
-    echo "Error: Safari project directory not found at $SAFARI_PROJECT_DIR"
-    exit 1
+    echo "Creating Safari project directory at $SAFARI_PROJECT_DIR"
+    mkdir -p "$SAFARI_PROJECT_DIR"
 fi
 
 # Copy manifest and background script

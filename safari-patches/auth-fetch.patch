@@ -1,0 +1,46 @@
+diff --git a/src/@/lib/auth/auth.ts b/src/@/lib/auth/auth.ts
+index c17edab..9d561b0 100644
+--- a/src/@/lib/auth/auth.ts
++++ b/src/@/lib/auth/auth.ts
+@@ -44,20 +44,30 @@ export async function getSession(
+   username: string,
+   password: string
+ ) {
+-  const session = await axios.post(
+-    `${url}/api/v1/session`,
+-    {
++  // Use fetch instead of axios for better Safari Web Extension compatibility
++  const response = await fetch(`${url}/api/v1/session`, {
++    method: 'POST',
++    headers: {
++      'Content-Type': 'application/json',
++    },
++    body: JSON.stringify({
+       username,
+       password,
+       sessionName: 'Browser Extension',
+-    },
+-    {
+-      headers: {
+-        'Content-Type': 'application/json',
+-      },
+-    }
+-  );
+-  return session;
++    }),
++  });
++
++  if (!response.ok) {
++    throw new Error(`HTTP error! status: ${response.status}`);
++  }
++
++  const data = await response.json();
++
++  // Return in axios-like format for compatibility
++  return {
++    status: response.status,
++    data: data,
++  };
+ }
+ 
+ export async function getSessionFetch(url: string) {

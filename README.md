@@ -51,7 +51,14 @@ linkwarden-safari-extension/
 │   ├── chromium/                    # Chrome manifest
 │   └── firefox/                     # Firefox manifest
 │
-├── copy-to-safari.sh               # Build script (run from root)
+├── build-for-safari.sh            # Main build script (applies patches, builds, resets)
+├── copy-to-safari.sh               # Helper script to copy built files
+├── safari-patches/                 # Safari-specific patches and manifest
+│   ├── README.md                    # Patch documentation
+│   ├── auth-fetch.patch            # Replace axios with fetch
+│   ├── cache-bookmarks.patch        # Bookmarks API guards
+│   ├── background-safari.patch     # Bookmarks/omnibox guards
+│   └── manifest-safari.json        # Safari-compatible manifest
 │
 ├── README.md                        # This file
 ├── RELEASE_STRATEGY.md              # Release and distribution strategy
@@ -89,21 +96,22 @@ git clone https://github.com/linkwarden/browser-extension.git linkwarden-officia
 
 ### Step 3: Build the Extension
 
-```bash
-# Build the official extension
-cd linkwarden-official
-npm install
-npm run build
+**Important:** We use a patch-based approach to keep the official source clean. The build script applies Safari-specific patches, builds, then resets the official repo.
 
-# Copy built files to Safari project (run from repository root)
-cd ..
-./copy-to-safari.sh
+```bash
+# Build for Safari (applies patches, builds, then resets official repo)
+./build-for-safari.sh
 ```
 
 This will:
-1. Install dependencies
-2. Build the TypeScript source code
-3. Copy built files to the Safari Xcode project using the `copy-to-safari.sh` script
+1. Reset the official repo to clean state
+2. Apply Safari-specific patches (see `safari-patches/` directory)
+3. Copy Safari-compatible manifest
+4. Build the TypeScript source code
+5. Copy built files to the Safari Xcode project
+6. Reset the official repo back to clean state
+
+**Why patches?** This approach keeps `linkwarden-official/` clean and makes it easy to pull updates from upstream without merge conflicts. See [safari-patches/README.md](./safari-patches/README.md) for details.
 
 ### Step 4: Open in Xcode
 
@@ -155,17 +163,17 @@ When the official Linkwarden extension is updated:
 # Update the official extension
 cd linkwarden-official
 git pull origin main
-npm install
-npm run build
-
-# Copy to Safari project (run from repository root)
 cd ..
-./copy-to-safari.sh
+
+# Build for Safari (patches are applied automatically)
+./build-for-safari.sh
 
 # Test in Safari, then commit any Safari-specific changes
 git add "Linkwarden for Safari/"
 git commit -m "Update from official extension vX.X.X"
 ```
+
+**Note:** If patches fail to apply after an upstream update, you may need to regenerate them. See [safari-patches/README.md](./safari-patches/README.md) for instructions.
 
 ## 🤝 Contributing
 
